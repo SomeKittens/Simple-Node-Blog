@@ -41,12 +41,10 @@ app.get('/admin', routes.admin);
 app.get('/admin/newPost', routes.newPost);
 app.get('/admin/settings', routes.settings);
 app.post('/admin/newPost', function(req, res) {
-  helpers.insertBlog(req, res);
-  res.render('newPost');
+  res.render('newPost', helpers.insertPost(req, res));
 });
 app.post('/admin/settings', function(req, res) {
-  helpers.updateSettings(req, res);
-  res.render('settings');
+  res.render('settings', helpers.updateSettings(req, res));
 });
 
 http.createServer(app).listen(app.get('port'), function(){
