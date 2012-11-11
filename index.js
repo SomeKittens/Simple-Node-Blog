@@ -27,6 +27,9 @@ app.configure(function() {
   app.use(app.router);
   app.use(require('less-middleware')({ src: __dirname + '/public' }));
   app.use(express.static(path.join(__dirname, 'public')));
+  
+  // Set locals to settings stored in db
+  helpers.getSettings(app);
 });
 
 app.configure('development', function(){
@@ -37,10 +40,8 @@ app.get('/', routes.home);
 app.get('/admin', routes.admin);
 app.post('/admin', helpers.insertBlog);
 
+
 http.createServer(app).listen(app.get('port'), function(){
   //TODO:Pull defaults from the database
-  app.locals ({
-    title: 'AwesomeBlog'
-  });
   console.log('Express server listening on port ' + app.get('port'));
 });
