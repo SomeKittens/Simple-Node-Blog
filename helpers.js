@@ -6,7 +6,7 @@ var mongo = require("mongodb")
 module.exports = {
   insertBlog: function(req, res) {
     //Parse the data into title and content (add date, too)
-    var query = {'title': req.body.title, 'content': req.body.content, 'created': new Date().toISOString()};
+    var query = {'title': req.body.postTitle, 'content': req.body.content, 'created': new Date().toISOString()};
     
     mdb.open(function(err, db) {
       db.collection('blogs', function(err, collection) {
@@ -21,7 +21,7 @@ module.exports = {
         });
       });
     });
-    res.render('admin');
+    //res.render('newPost');
   },
   getSettings: function(app) {
     mdb.open(function(err, db) {
@@ -40,5 +40,21 @@ module.exports = {
         });
       });
     });
+  },
+  updateSettings: function(req, res) {
+    mdb.open(function(err, db) {
+      db.collection('settings', function(err, collection) {
+        var newSettings = {title: req.body.blogTitle};
+        collection.update({}, newSettings, function(err, document) {
+          if(err) {
+            console.error('Error setting settings: ' + err);
+            return;
+          }
+          req.app.locals = newSettings;
+          db.close();
+        });
+      });
+    });
+    res.render('settings');
   }
 };

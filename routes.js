@@ -26,5 +26,11 @@ module.exports = {
 	},
 	admin: function(req, res) {
 		res.render('admin');
+	},
+	newPost: function(req, res) {
+	  res.render('newPost');
+	},
+	settings: function(req, res) {
+		res.render('settings');
 	}
 };

@@ -38,10 +38,17 @@ app.configure('development', function(){
 
 app.get('/', routes.home);
 app.get('/admin', routes.admin);
-app.post('/admin', helpers.insertBlog);
-
+app.get('/admin/newPost', routes.newPost);
+app.get('/admin/settings', routes.settings);
+app.post('/admin/newPost', function(req, res) {
+  helpers.insertBlog(req, res);
+  res.render('newPost');
+});
+app.post('/admin/settings', function(req, res) {
+  helpers.updateSettings(req, res)
+  res.render('settings')
+});
 
 http.createServer(app).listen(app.get('port'), function(){
-  //TODO:Pull defaults from the database
   console.log('Express server listening on port ' + app.get('port'));
 });
