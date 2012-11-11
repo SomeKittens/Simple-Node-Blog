@@ -45,8 +45,8 @@ app.post('/admin/newPost', function(req, res) {
   res.render('newPost');
 });
 app.post('/admin/settings', function(req, res) {
-  helpers.updateSettings(req, res)
-  res.render('settings')
+  helpers.updateSettings(req, res);
+  res.render('settings');
 });
 
 http.createServer(app).listen(app.get('port'), function(){
