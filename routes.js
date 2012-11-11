@@ -1,7 +1,7 @@
 'use strict';
 var mongo = require('mongodb')
-	, server = new mongo.Server('localhost', mongo.Connection.DEFAULT_PORT, {auto_reconnect: true, safe:true})
-	, mdb = new mongo.Db('blog', server);
+	, server = new mongo.Server('localhost', mongo.Connection.DEFAULT_PORT, {auto_reconnect: true})
+	, mdb = new mongo.Db('blog', server, {safe: true});
 
 module.exports = {
 	home: function(req, res) {
@@ -31,6 +31,6 @@ module.exports = {
 		res.render('newPost');
 	},
 	settings: function(req, res) {
-		res.render('settings');
+		res.render('settings', {title: req.app.locals.title});
 	}
 };
