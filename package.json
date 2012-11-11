@@ -1,6 +1,6 @@
 {
 	"name": "simple-node-blog",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"author": "SomeKittens <rkoutnik@gmail.com>",
 	"description": "A simple blog framework",
 	"repository": {
@@ -8,7 +8,10 @@
 		"url": "https://github.com/SomeKittens/simple-node-blog"
 	},
 	"dependencies": {
-		"mongodb": "1.1.x"
+		"mongodb": ">= 1.1.x",
+		"express": ">= 3.0.x",
+		"ejs": "*",
+    "less-middleware": "*"
 	},
 	"license": "MIT",
 	"engines": {
