@@ -1,6 +1,6 @@
 {
 	"name": "simple-node-blog",
-	"version": "0.2.1",
+	"version": "0.2.3",
 	"author": "SomeKittens <rkoutnik@gmail.com>",
 	"description": "A simple blog framework",
 	"repository": {
