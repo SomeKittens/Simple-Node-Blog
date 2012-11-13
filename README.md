@@ -14,3 +14,4 @@ Originally, it was designed witout a framework (only mongodb was needed).  Since
  - Tags/Categories
  - Search
  - Ability to edit post
+ - Unit Testing
