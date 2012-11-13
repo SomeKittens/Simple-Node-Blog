@@ -1,9 +1,18 @@
 <!DOCTYPE html>
 <head>
-<title><%= title %></title>
+  <title><%= title %></title>
+  <link rel='stylesheet' href='/css/home.css' />
 </head>
 <body>
-<h1><%= title %>!</h1>
-<%- blogs %><br />
-<a href="/admin">Admin section</a>
+  <div id="container">
+    <div id="header">
+      <h1><%= title %>!</h1>
+    </div>
+    <div id="content">
+    <%- blogs %><br />
+    </div>
+    <div id="sidebar">
+      <a href="/admin">Administrators</a>
+    </div>
+  </div>
 </body>

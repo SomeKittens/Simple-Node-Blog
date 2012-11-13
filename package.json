@@ -8,10 +8,10 @@
 		"url": "https://github.com/SomeKittens/simple-node-blog"
 	},
 	"dependencies": {
-		"mongodb": ">= 1.1.x",
-		"express": ">= 3.0.x",
-		"ejs": "*",
-    "less-middleware": "*"
+    "mongodb": ">= 1.1.x",
+    "express": ">= 3.0.x",
+    "ejs": "0.8.x",
+    "less-middleware": "0.1.x"
 	},
 	"license": "MIT",
 	"engines": {
