@@ -14,11 +14,11 @@ Grab the blog data:
 
 Download the relevant plugins
 
-  npm install
+    npm install
 
 Run it!
 
-  node index.js
+    node index.js
 
 ###Things to do before v1.0
  - Authentication (login, only authors can get into backend)
