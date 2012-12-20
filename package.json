@@ -5,7 +5,7 @@
 	"description": "A simple blog framework",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/SomeKittens/simple-node-blog"
+		"url": "https://github.com/SomeKittens/Simple-Node-Blog"
 	},
 	"dependencies": {
     "mongodb": ">= 1.1.x",

@@ -1,7 +1,7 @@
 'use strict';
-var mongo = require("mongodb")
-	, server = new mongo.Server("localhost", mongo.Connection.DEFAULT_PORT, {auto_reconnect: true})
-	, mdb = new mongo.Db("blog", server, {safe: true});
+var mongo = require('mongodb')
+  , server = new mongo.Server('localhost', mongo.Connection.DEFAULT_PORT, {auto_reconnect: true})
+  , mdb = new mongo.Db('blog', server, {safe: true});
 
 module.exports = {
   insertBlog: function(req, res) {
